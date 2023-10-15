@@ -1,36 +1,16 @@
 import React from 'react';
 import './App.css';
-import MainPage from './pages/mainPage/MainPage';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
+import customTheme from './Themes/CustomTheme';
+import MainPage from './pages/MainPage';
 
 function App() {
-  const customTheme = createTheme({
-    palette: {
-      primary: {
-        main: '#F0ECE2', // primary color
-      },
-      secondary: {
-        main: '#DFD3C3', // secondary color
-      },
-      customColor1: {
-        main: '#C7B198', // custom button color 1
-      },
-      iconColor: {
-        main: '#596E79', // custom button color 2
-      },
-    },
-    typography: {
-      fontFamily: 'Arial, sans-serif',
-    },
-  });
-
-
   return (
-    <ThemeProvider theme={customTheme}>
-      <div className="App" style={{ backgroundColor: customTheme.palette.primary.main, minHeight: '100vh' }}>
+    <div className='App'>
+      <ThemeProvider theme={customTheme}>
         <MainPage/>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </div>
   );
 }
 

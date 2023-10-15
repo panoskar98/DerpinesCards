@@ -1,29 +1,15 @@
-import { AppBar, Box, Grid, IconButton, Link, Toolbar, Typography } from '@mui/material';
-import logo from '../assets/images/logo.png'
+import { Box } from "@mui/material";
 import InstagramIcon from '@mui/icons-material/Instagram';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import logo from '../assets/images/logo.png'
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
-function Header() {
+const Header = () => {
     return (
-        <AppBar position="static" style={{backgroundColor: 'transparent', boxShadow: 'none'}} >
-        <Toolbar>
-          <div>
-            <IconButton >
-              <InstagramIcon color='iconColor'/>
-            </IconButton>
-          </div>
-
-          <div variant="h6" style={{ flexGrow: 1, textAlign: 'center' }}>
-            <img src={logo} alt='logo' style={{height: "120px"}}/>
-          </div>
-  
-          <div>
-            <IconButton >
-              <ShoppingCartIcon color='iconColor' />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
+        <Box display="flex" justifyContent= "space-between" padding={1} alignItems="center">
+            <InstagramIcon/>
+            <img style={{height: "100px"}} src={logo} alt="logo" />
+            <ShoppingBasketIcon/>
+        </Box>
     );
 }
 
