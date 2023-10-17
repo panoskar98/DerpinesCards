@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import { ThemeProvider } from '@mui/material';
-import customTheme from './Themes/CustomTheme';
 import MainPage from './pages/MainPage';
+import AdminPage from './pages/AdminPage';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className='App'>
-      <ThemeProvider theme={customTheme}>
-        <MainPage/>
-      </ThemeProvider>
+      <Routes>
+        <Route path='/' element={<MainPage/>} />
+        <Route path='/admin' element={<AdminPage/>}/>
+      </Routes>
     </div>
   );
 }
