@@ -1,7 +1,8 @@
 import { Box, Grid, Pagination, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 
-const ProductsBox = () => {
+const ProductsBox = (props) => {
+  const products = props.products
     return(
         <Box marginY={5}>
             <Typography
@@ -13,10 +14,8 @@ const ProductsBox = () => {
             Candles
           </Typography>
             <Grid container spacing={5} justifyContent="center" alignItems="center">
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
+              {/** TO FIX: problem with mapping */}
+                {products.map((product,index) => <ProductCard key={index} product={product}/>)}  
             </Grid>
             <Box margin={3} display="flex" justifyContent="center">
             <Pagination count={10}/>

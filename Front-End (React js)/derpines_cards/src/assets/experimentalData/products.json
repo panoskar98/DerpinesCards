@@ -1,0 +1,16 @@
+[
+    {
+		"productId": 2,
+		"title": "DemoCard",
+		"description": "This is a demo Card",
+		"modular": true,
+		"img": "https://image.shutterstock.com/image-photo/cozy-home-interior-decor-burning-260nw-1037164117.jpg"
+	},
+	{
+		"productId": 1,
+		"title": "DemoCandle",
+		"description": "This is a demo Candle",
+		"modular": true,
+		"img": "https://luxurycandles.gr/wp-content/uploads/2021/06/DONOUSA-scaled.jpg"
+	}
+]

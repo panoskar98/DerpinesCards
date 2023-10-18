@@ -38,3 +38,4 @@ out/
 
 ### User Defined ###
 application.yml
+flyway.conf
