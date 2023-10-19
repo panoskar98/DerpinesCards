@@ -21,16 +21,19 @@ public class Customer {
     private String email;
     @Column(name = "Address")
     private String address;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     @OneToMany(mappedBy = "customer")
     private Set<Order> customerOrders;
 
 
-    public Customer(String name, String surname, String email, String address, Set<Order> customerOrders) {
+    public Customer(String name, String surname, String email, String address, String phoneNumber, Set<Order> customerOrders) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.address = address;
+        this.phoneNumber = phoneNumber;
         this.customerOrders = customerOrders;
     }
 
@@ -80,5 +83,13 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
