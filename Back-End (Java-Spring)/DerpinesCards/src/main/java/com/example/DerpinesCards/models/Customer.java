@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @Entity
@@ -21,12 +22,24 @@ public class Customer {
     @Column(name = "Address")
     private String address;
 
+    @OneToMany(mappedBy = "customer")
+    private Set<Order> customerOrders;
 
-    public Customer(String name, String surname, String email, String address) {
+
+    public Customer(String name, String surname, String email, String address, Set<Order> customerOrders) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.address = address;
+        this.customerOrders = customerOrders;
+    }
+
+    public Set<Order> getCustomerOrders() {
+        return customerOrders;
+    }
+
+    public void setCustomerOrders(Set<Order> customerOrders) {
+        this.customerOrders = customerOrders;
     }
 
     public int getCustomerId() {

@@ -1,5 +1,6 @@
 package com.example.DerpinesCards.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
@@ -27,7 +28,11 @@ public class Product {
     @Column(name = "price")
     private double price;
 
-    public Product(String title, String description, String img, int weight, String colour, String type, double price) {
+    @JsonIgnore
+    @ManyToMany(mappedBy = "ordersProducts")
+    private List<Order> productsOrders;
+
+    public Product(String title, String description, String img, int weight, String colour, String type, double price, List<Order> productsOrders) {
         this.title = title;
         this.description = description;
         this.img = img;
@@ -35,6 +40,15 @@ public class Product {
         this.colour = colour;
         this.type = type;
         this.price = price;
+        this.productsOrders = productsOrders;
+    }
+
+    public List<Order> getProductsOrders() {
+        return productsOrders;
+    }
+
+    public void setProductsOrders(List<Order> productsOrders) {
+        this.productsOrders = productsOrders;
     }
 
     public int getProductId() {
