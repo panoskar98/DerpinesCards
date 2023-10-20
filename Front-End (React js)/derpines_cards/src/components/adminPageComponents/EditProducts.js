@@ -12,13 +12,13 @@ function EditProducts() {
         { field: 'title', headerName: 'title', width: 110},
         { field: 'color', headerName: 'color', width: 110},
         { field: 'description', headerName: 'description', width: 150},
+        { field: 'dateAdded', headerName: 'Date Added', width: 150}
 
     ]
-    console.log()
 
     const rows = products.map((product) => {
         return(
-            {id: product.productId, type: product.type, title: product.title, color: product.colour, description: product.description}
+            {id: product.productId, type: product.type, title: product.title, color: product.colour, description: product.description, dateAdded: product.dateAdded}
         )
     })
     return (

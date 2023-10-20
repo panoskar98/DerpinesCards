@@ -5,6 +5,7 @@ import AdminPage from './pages/AdminPage';
 import { Route, Routes } from 'react-router-dom';
 import DataContext from './DataContext';
 import axios from 'axios';
+import { Box, CircularProgress } from '@mui/material';
 
 function App() {
   const[products,setProducts] = useState(null)
@@ -15,7 +16,11 @@ function App() {
     })
   },[])
 
-  if (!products) return null;
+  if (!products) return(
+      <Box sx={{ display: 'flex' }}>
+        <CircularProgress />
+      </Box>
+  );
 
   return (
     <div className='App'>
