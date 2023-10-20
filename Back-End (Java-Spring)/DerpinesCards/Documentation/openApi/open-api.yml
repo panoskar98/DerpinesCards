@@ -227,6 +227,10 @@ components:
         img:
           type: string
           example: "image url"
+        dateAdded:
+          type: string
+          example: "2023-10-20T13:47:57.695269"
+
     customer:
       type: object
       properties:

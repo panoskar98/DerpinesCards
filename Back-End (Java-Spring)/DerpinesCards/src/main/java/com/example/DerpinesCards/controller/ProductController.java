@@ -24,6 +24,7 @@ public class ProductController {
 
     @PostMapping
     private ResponseEntity<Product> addProduct(@RequestBody Product product) {
+        product.setDateAdded(java.time.LocalDateTime.now());
         return new ResponseEntity<>(this.productRepository.save(product), HttpStatus.CREATED);
     }
 
@@ -44,6 +45,7 @@ public class ProductController {
         productToUpdate.setColour(product.getColour());
         productToUpdate.setType(product.getType());
         productToUpdate.setPrice(product.getPrice());
+        productToUpdate.setDateAdded(java.time.LocalDateTime.now());
         return ResponseEntity.ok(this.productRepository.save(productToUpdate));
     }
 }

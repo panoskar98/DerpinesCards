@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -27,12 +28,14 @@ public class Product {
     private String type;
     @Column(name = "price")
     private double price;
+    @Column(name = "date_added")
+    private LocalDateTime dateAdded;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "ordersProducts")
     private List<Order> productsOrders;
 
-    public Product(String title, String description, String img, int weight, String colour, String type, double price, List<Order> productsOrders) {
+    public Product(String title, String description, String img, int weight, String colour, String type, double price, LocalDateTime dateAdded, List<Order> productsOrders) {
         this.title = title;
         this.description = description;
         this.img = img;
@@ -40,6 +43,7 @@ public class Product {
         this.colour = colour;
         this.type = type;
         this.price = price;
+        this.dateAdded = dateAdded;
         this.productsOrders = productsOrders;
     }
 
@@ -113,5 +117,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public LocalDateTime getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(LocalDateTime dateAdded) {
+        this.dateAdded = dateAdded;
     }
 }
