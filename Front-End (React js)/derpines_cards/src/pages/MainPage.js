@@ -1,16 +1,16 @@
 import { Box, Container, ThemeProvider } from "@mui/material";
-import Header from "../components/Header";
+import Header from "../components/mainPageComponents/Header";
 import customTheme from "../Themes/CustomTheme";
-import ProductsBox from "../components/ProductsBox";
-import Footer from "../components/Footer";
+import ProductsBox from "../components/mainPageComponents/ProductsBox";
+import Footer from "../components/mainPageComponents/Footer";
 
-const MainPage = (props) => {
+const MainPage = () => {
     return (
         <ThemeProvider theme={customTheme}>
             <Box sx={{ backgroundColor: customTheme.palette.primary.main }}>
                 <Container maxWidth="lg">
                     <Header />
-                    <ProductsBox products={props.products}/>
+                    <ProductsBox />
                     <Footer />
                 </Container>
             </Box>

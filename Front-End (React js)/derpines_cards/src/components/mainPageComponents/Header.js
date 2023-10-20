@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import InstagramIcon from '@mui/icons-material/Instagram';
-import logo from '../assets/images/logo.png'
+import logo from '../../assets/images/logo.png'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const Header = () => {
