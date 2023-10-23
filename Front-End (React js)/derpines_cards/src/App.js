@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import MainPage from './pages/MainPage';
 import AdminPage from './pages/AdminPage';
+import ProductPage from './pages/ProductPage'
 import { Route, Routes } from 'react-router-dom';
 import DataContext from './DataContext';
 import axios from 'axios';
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path='/' element={<MainPage products={products} />} />
           <Route path='/admin' element={<AdminPage />} />
+          <Route path='/product/:id' element={<ProductPage/>} />
         </Routes>
       </DataContext.Provider>
     </div>

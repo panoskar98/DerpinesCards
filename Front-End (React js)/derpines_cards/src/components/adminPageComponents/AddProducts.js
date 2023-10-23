@@ -2,6 +2,7 @@ import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogCon
 import { useEffect, useState } from "react";
 import ProductCard from "../mainPageComponents/ProductCard"
 import axios from "axios";
+import ProductPreview from "./ProductPreview";
 
 // Todo: Add a link to product page on submit
 
@@ -40,6 +41,10 @@ const AddProducts = () => {
 
     const submitToDataBase = () => {
         axios.post("http://localhost:4000/products", product).then((response) => {setPost(response.data)})
+    }
+
+    if(post !== null) {
+        return(<ProductPreview post={post}/>)
     }
 
     console.log(post)
