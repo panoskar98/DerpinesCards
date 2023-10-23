@@ -1,5 +1,7 @@
-import { Box, Button, Container, FormControl, FormHelperText, Grid, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormHelperText, Grid, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select, TextField, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import ProductCard from "../mainPageComponents/ProductCard"
+import axios from "axios";
 
 const AddProducts = () => {
     const [type, setType] = useState("card")
@@ -9,7 +11,36 @@ const AddProducts = () => {
     const [weight, setWeight] = useState(0)
     const [price, setPrice] = useState(0)
     const [imgUrl, setImgUrl] = useState("")
+    const [post, setPost] = useState(null)
 
+    const [product, setProduct] = useState({
+        "type": type,
+        "title": title,
+        "description": description,
+        "color": color,
+        "weight": weight,
+        "price": price,
+        "img": imgUrl
+    })
+
+    useEffect(() => {
+        const newProduct = {
+            "type": type,
+            "title": title,
+            "description": description,
+            "color": color,
+            "weight": weight,
+            "price": price,
+            "img": imgUrl
+        }
+        setProduct(newProduct);
+    }, [type, title, description, color, weight, price, imgUrl])
+
+    const submitToDataBase = () => {
+        axios.post("http://localhost:4000/products", product).then((response) => {setPost(response.data)})
+    }
+
+    console.log(post)
 
     return (
         <Container>
@@ -19,6 +50,7 @@ const AddProducts = () => {
                         Add Product
                     </Typography>
                 </Grid>
+                <ProductCard product={product} />
                 <Grid item sm={12} display="flex" justifyContent="center">
                     <FormControl >
                         <InputLabel id="type-label">Type</InputLabel>
@@ -94,7 +126,7 @@ const AddProducts = () => {
                     />
                 </Grid>
                 <Grid item sm={12} display="flex" justifyContent="center">
-                    <Button variant="contained">Submit</Button>
+                    <Button variant="contained" onClick={submitToDataBase}>Submit</Button>
                 </Grid>
             </Grid>
         </Container>
