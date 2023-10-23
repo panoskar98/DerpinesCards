@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import ProductCard from "../mainPageComponents/ProductCard"
 import axios from "axios";
 
+// Todo: Add a link to product page on submit
+
 const AddProducts = () => {
     const [type, setType] = useState("card")
     const [title, setTitle] = useState("title")
@@ -17,7 +19,7 @@ const AddProducts = () => {
         "type": type,
         "title": title,
         "description": description,
-        "color": color,
+        "colour": color,
         "weight": weight,
         "price": price,
         "img": imgUrl
@@ -28,7 +30,7 @@ const AddProducts = () => {
             "type": type,
             "title": title,
             "description": description,
-            "color": color,
+            "colour": color,
             "weight": weight,
             "price": price,
             "img": imgUrl
