@@ -28,7 +28,7 @@ function App() {
       <DataContext.Provider value={{ products }}>
         <Routes>
           <Route path='/' element={<MainPage products={products} />} />
-          <Route path='/admin' element={<AdminPage />} />
+          <Route path='/admin/*' element={<AdminPage />} />
           <Route path='/product/:id' element={<ProductPage/>} />
         </Routes>
       </DataContext.Provider>

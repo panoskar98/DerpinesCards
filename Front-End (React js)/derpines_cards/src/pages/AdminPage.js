@@ -5,17 +5,20 @@ import Orders from "../components/adminPageComponents/Orders";
 import { useEffect, useState } from "react";
 import AddProducts from "../components/adminPageComponents/AddProducts";
 import EditProducts from "../components/adminPageComponents/EditProducts";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { Add } from "@mui/icons-material";
 
 const AdminPage = () => {
     const [option,setOption] = useState('orders')
+    const navigate = useNavigate()
 
     const getBody = () => {
         if(option === 'orders'){
-            return <Orders/>
+            navigate('/admin/orders')
         }else if(option === 'addProduct'){
-            return <AddProducts/>
+            navigate('/admin/addProduct')
         }else if(option === 'editProduct'){
-            return <EditProducts/>
+            navigate('/admin/editProduct')
         }
     }
 
@@ -29,7 +32,12 @@ const AdminPage = () => {
                 <SideBar setOption={setOption} />
                 <Paper elevation={5} sx={{ width: "100%", margin: "10px" }}>
                     <Box padding={2}>
-                        {getBody()}
+                        {/* {getBody()} */}
+                        <Routes>
+                            <Route path="/orders" element={<Orders />}/>
+                            <Route path="/addProduct" element={<AddProducts/>}/>
+                            <Route path="/editProduct" element={<EditProducts/>}/>
+                        </Routes>
                     </Box>
                 </Paper>
             </Box>
