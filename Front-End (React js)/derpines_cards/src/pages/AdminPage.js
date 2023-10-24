@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import AddProducts from "../components/adminPageComponents/AddProducts";
 import EditProducts from "../components/adminPageComponents/EditProducts";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { Add } from "@mui/icons-material";
 
 const AdminPage = () => {
     const [option,setOption] = useState('orders')

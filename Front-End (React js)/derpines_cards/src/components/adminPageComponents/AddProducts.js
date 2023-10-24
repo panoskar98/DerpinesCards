@@ -40,7 +40,8 @@ const AddProducts = () => {
     }, [type, title, description, color, weight, price, imgUrl])
 
     const submitToDataBase = () => {
-        axios.post("http://localhost:4000/products", product).then((response) => {setPost(response.data)})
+        axios.post("http://localhost:4000/products", product).then((response) => {setPost(response.data)});
+        window.location.reload(false)
     }
 
     if(post !== null) {

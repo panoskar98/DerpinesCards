@@ -39,9 +39,10 @@ function EditProducts() {
                 </Box>
             ),
         }
-
     ]
+    
 
+    
     const rows = products.map((product) => {
         return (
             { id: product.productId, type: product.type, title: product.title,price:product.price, colour: product.colour,weight: product.weight, description: product.description, dateAdded: product.dateAdded, img: product.img }
@@ -61,7 +62,7 @@ function EditProducts() {
     const handleEdit = () => {
         console.log(updatedRow.id)
         axios.put("http://localhost:4000/products/" + String(updatedRow.id),updatedRow).then(() => {alert("Product Updated")});
-        window.location.reload(false);
+        window.location.reload(false)
     }
 
     
