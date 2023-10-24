@@ -17,7 +17,7 @@ const MainPage = () => {
 
     return (
         <ThemeProvider theme={customTheme}>
-            <Box className="gradient-background" sx={{ backgroundColor: customTheme.palette.primary.main }} height={"100vh"}>
+            <Box className="gradient-background" height="100%" paddingY="10px">
                 <Container maxWidth="lg">
                     <Box className="glass" padding="10px">
                         <Header />

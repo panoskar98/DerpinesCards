@@ -3,7 +3,7 @@ import { Box, Container, Link, Typography } from "@mui/material";
 
 const Footer = () => {
     return (
-        <Box component="footer" sx={{bottom: 0}}>
+        <Box component="footer">
             <Container maxWidth="lg">
                 <Typography variant="h6" align="center" gutterBottom>
                     Derpine's Cards
