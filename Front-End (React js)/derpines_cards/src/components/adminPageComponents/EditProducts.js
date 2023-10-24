@@ -1,10 +1,9 @@
-import { DataGrid, useGridApiRef } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { useContext, useState } from "react";
 import DataContext from "../../DataContext";
-import { Delete, Edit, SaveAs } from "@mui/icons-material";
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Modal } from "@mui/material";
+import { Delete, SaveAs } from "@mui/icons-material";
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
 import axios from "axios";
-//todo: connect edit product with database
 
 function EditProducts() {
     const { products } = useContext(DataContext)
