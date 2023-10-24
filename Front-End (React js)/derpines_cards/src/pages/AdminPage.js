@@ -32,7 +32,6 @@ const AdminPage = () => {
                 <SideBar setOption={setOption} />
                 <Paper elevation={5} sx={{ width: "100%", margin: "10px" }}>
                     <Box padding={2}>
-                        {/* {getBody()} */}
                         <Routes>
                             <Route path="/orders" element={<Orders />}/>
                             <Route path="/addProduct" element={<AddProducts/>}/>
