@@ -17,7 +17,7 @@ const MainPage = () => {
 
     return (
         <ThemeProvider theme={customTheme}>
-            <Box className="gradient-background" height="100%" paddingY="10px">
+            <Box className="gradient-background" height="100%" paddingY="10px" display="flex" flexDirection="column" minHeight="100vh">
                 <Container maxWidth="lg">
                     <Box className="glass" padding="10px">
                         <Header />
@@ -25,7 +25,7 @@ const MainPage = () => {
                     <Box className="glass" marginTop={4}>
                         <Routes>
                             <Route path="/products" element={<ProductsBox />} />
-                            <Route path='/product/:id' element={<ProductPage />} />
+                            <Route path='/product/:title' element={<ProductPage />} />
                         </Routes>
                     </Box>
                     <Box className="glass" marginTop={4} padding="8px">

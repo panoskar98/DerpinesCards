@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100;200;300;400;500;600;700;800&family=Roboto:ital,wght@0,300;1,700&display=swap');
 .gradient-background {
-    background: linear-gradient(300deg, #C7B198, #F0ECE2, #596E79);
+    background: linear-gradient(300deg,#eea6b1, #F0ECE2, #596E79);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
   }

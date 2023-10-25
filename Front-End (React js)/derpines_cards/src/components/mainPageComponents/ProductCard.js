@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const ProductCard = (props) => {
+    const productRoute = props.product.title;
     return (
         <Grid item    
             sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -28,7 +29,7 @@ const ProductCard = (props) => {
                         {props.product.price + " €"}
                     </Typography>
                     <Button variant="outlined" color="dark2" >
-                        <Link to={`/product/${props.product.productId}`} state={props.product} style={{ textDecoration: "none" }}>
+                        <Link to={`/product/${productRoute}`} state={props.product} style={{ textDecoration: "none" }}>
                             Modify
                         </Link>
                     </Button>
