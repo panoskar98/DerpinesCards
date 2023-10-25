@@ -8,7 +8,9 @@ import axios from 'axios';
 import { Box, CircularProgress } from '@mui/material';
 
 function App() {
-  const[products,setProducts] = useState(null)
+  const [products,setProducts] = useState(null)
+  const [orderProductIds, setOrderProductIds] = useState([])
+  const [orderComments, setOrderComments] = useState([])
 
   function getProducts() {
     axios.get("http://localhost:4000/products").then((response) => {
@@ -28,7 +30,7 @@ function App() {
 
   return (
     <div className='App'>
-      <DataContext.Provider value={{ products, getProducts}}>
+      <DataContext.Provider value={{ products, getProducts, orderProductIds, setOrderProductIds, orderComments, setOrderComments}}>
         <Routes>
           <Route path='/*' element={<MainPage products={products} />} />
           <Route path='/admin/*' element={<AdminPage />} />

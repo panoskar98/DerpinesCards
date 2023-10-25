@@ -11,7 +11,7 @@ function ProductPage() {
     const product = location.state;
     const [selectedColour, setSelectedColour] = useState(null)
     const [comment, setComment] = useState("");
-    const { products } = useContext(DataContext)
+    const { products, orderProductIds, setOrderProductIds, orderComments, setOrderComments } = useContext(DataContext)
 
     const handleCommentChange = (event) => {
         setComment(event.target.value);
@@ -25,10 +25,11 @@ function ProductPage() {
 
     const handleAddToCart = () => {
         handleSubmitComment();
-        const getProductID = products.find(prod => {
+        const productId = products.find(prod => {
             return prod.title === product.title && prod.colour === selectedColour
-        }).productId
-        console.log(getProductID)
+        }).productId;
+        setOrderProductIds([...orderProductIds, productId]);
+        setOrderComments([...orderComments, `${product.title}: ${comment}`])
     }
 
     return (
