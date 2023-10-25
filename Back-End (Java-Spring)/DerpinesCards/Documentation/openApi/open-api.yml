@@ -252,6 +252,9 @@ components:
         phoneNumber:
           type: string
           example: "692342343"
+        comments:
+          type: string
+          example: "This is a comment"
         customerOrders:
           type: array
           items:
@@ -328,6 +331,9 @@ components:
         phoneNumber:
           type: string
           example: "692342343"
+        comments:
+          type: string
+          example: "This is a comment"
     AddOrder:
       type: array
       example: [1,2]
