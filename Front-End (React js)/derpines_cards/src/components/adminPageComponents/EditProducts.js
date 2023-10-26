@@ -4,12 +4,14 @@ import DataContext from "../../DataContext";
 import { Delete, SaveAs } from "@mui/icons-material";
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function EditProducts() {
-    const { products } = useContext(DataContext)
+    const { products, getProducts } = useContext(DataContext)
     const [deleteDialog, setDeleteDialog] = useState(false)
     const [selectedId, setSelectedId] = useState(null)
     const [updatedRow, setUpdatedRow] = useState({})
+    const navigate = useNavigate()
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 60 },
@@ -59,9 +61,9 @@ function EditProducts() {
     }
 
     const handleEdit = () => {
-        console.log(updatedRow.id)
         axios.put("http://localhost:4000/products/" + String(updatedRow.id),updatedRow).then(() => {alert("Product Updated")});
-        window.location.reload(false)
+        getProducts();
+        navigate('/admin/editProduct')
     }
 
     

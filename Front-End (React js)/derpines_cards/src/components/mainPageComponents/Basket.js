@@ -2,10 +2,12 @@ import { Delete, ShoppingBasket } from "@mui/icons-material";
 import { Badge, Box, Button, Divider, List, ListItem, ListItemText, Popover, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 import DataContext from "../../DataContext";
+import { useNavigate } from "react-router-dom";
 
 function Basket() {
     const { products, orderProductIds, setOrderProductIds, totalPrice } = useContext(DataContext)
     const [anchorEl, setAnchorEl] = useState(null);
+    const navigate = useNavigate();
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -92,7 +94,7 @@ function Basket() {
                 </Box>
                 <Divider/>
                 <Box display="flex" justifyContent="center" paddingY={1}>
-                <Button variant="contained">Checkout</Button>
+                <Button variant="contained" onClick={() => navigate('/checkout')}>Checkout</Button>
                 </Box>
             </Popover>
         </Box>

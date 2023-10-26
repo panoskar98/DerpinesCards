@@ -6,18 +6,33 @@ import { Route, Routes } from 'react-router-dom';
 import DataContext from './DataContext';
 import axios from 'axios';
 import { Box, CircularProgress } from '@mui/material';
+import Checkout from './pages/Checkout';
 
 function App() {
-  const [products,setProducts] = useState(null)
-  const [orderProductIds, setOrderProductIds] = useState([])
-  const [orderComments, setOrderComments] = useState([])
-  const [totalPrice, setTotalPrice] = useState(0.0)
+  const [products,setProducts] = useState(null);
+  const [orderProductIds, setOrderProductIds] = useState([]);
+  const [orderComments, setOrderComments] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0.0);
+  const [customerInfo, setCustomerInfo] = useState({
+    name: "",
+    surname: "",
+    address: "",
+    email: "",
+    phoneNumber: "",
+    comments: orderComments
+});
 
   function getProducts() {
     axios.get("http://localhost:4000/products").then((response) => {
       setProducts(response.data)
     })
   }
+
+  useEffect(() =>{
+    const customer = customerInfo;
+    customer.comments = orderComments.toString();
+    setCustomerInfo(customer)
+  },[orderComments])
 
   useEffect(() => {
     let total = 0;
@@ -40,10 +55,11 @@ function App() {
 
   return (
     <div className='App'>
-      <DataContext.Provider value={{ products, getProducts, orderProductIds, setOrderProductIds, orderComments, setOrderComments, totalPrice}}>
+      <DataContext.Provider value={{ products, getProducts, orderProductIds, setOrderProductIds, orderComments, setOrderComments, totalPrice, customerInfo, setCustomerInfo}}>
         <Routes>
           <Route path='/*' element={<MainPage products={products} />} />
           <Route path='/admin/*' element={<AdminPage />} />
+          <Route path='/checkout' element={<Checkout/>} />
         </Routes>
       </DataContext.Provider>
     </div>
