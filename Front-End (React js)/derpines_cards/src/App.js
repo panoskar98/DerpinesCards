@@ -11,12 +11,22 @@ function App() {
   const [products,setProducts] = useState(null)
   const [orderProductIds, setOrderProductIds] = useState([])
   const [orderComments, setOrderComments] = useState([])
+  const [totalPrice, setTotalPrice] = useState(0.0)
 
   function getProducts() {
     axios.get("http://localhost:4000/products").then((response) => {
       setProducts(response.data)
     })
   }
+
+  useEffect(() => {
+    let total = 0;
+    orderProductIds.forEach((id) => {
+     const product = products.find(prod => prod.productId === id)
+     total += Number(product.price);
+    })
+    setTotalPrice(total)
+  },[orderProductIds])
 
   useEffect(() => {
     getProducts();
@@ -30,7 +40,7 @@ function App() {
 
   return (
     <div className='App'>
-      <DataContext.Provider value={{ products, getProducts, orderProductIds, setOrderProductIds, orderComments, setOrderComments}}>
+      <DataContext.Provider value={{ products, getProducts, orderProductIds, setOrderProductIds, orderComments, setOrderComments, totalPrice}}>
         <Routes>
           <Route path='/*' element={<MainPage products={products} />} />
           <Route path='/admin/*' element={<AdminPage />} />

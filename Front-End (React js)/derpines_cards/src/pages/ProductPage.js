@@ -9,7 +9,7 @@ import DataContext from "../DataContext";
 function ProductPage() {
     const location = useLocation()
     const product = location.state;
-    const [selectedColour, setSelectedColour] = useState(null)
+    const [selectedColour, setSelectedColour] = useState(product.colour[0])
     const [comment, setComment] = useState("");
     const { products, orderProductIds, setOrderProductIds, orderComments, setOrderComments } = useContext(DataContext)
 
