@@ -90,6 +90,10 @@ function Basket() {
                         {totalPrice + "€"}
                     </Typography>
                 </Box>
+                <Divider/>
+                <Box display="flex" justifyContent="center" paddingY={1}>
+                <Button variant="contained">Checkout</Button>
+                </Box>
             </Popover>
         </Box>
     )
