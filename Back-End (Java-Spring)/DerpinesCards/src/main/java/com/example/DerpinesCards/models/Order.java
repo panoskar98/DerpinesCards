@@ -22,7 +22,7 @@ public class Order {
     @Column(name = "completed")
     private boolean completed;
 
-    @JsonIgnore
+    @JsonIgnoreProperties({"customerOrders"})
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     private Customer customer;
