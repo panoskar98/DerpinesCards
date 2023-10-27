@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import AddProducts from "../components/adminPageComponents/AddProducts";
 import EditProducts from "../components/adminPageComponents/EditProducts";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import OrderPreview from "../components/adminPageComponents/OrderPreview";
 
 const AdminPage = () => {
     const [option,setOption] = useState('orders')
@@ -27,14 +28,15 @@ const AdminPage = () => {
 
     return (
         <ThemeProvider theme={customTheme}>
-            <Box height={"100%"} display={"flex"} flexDirection={"row"} gap={"10px"} sx={{ backgroundColor: customTheme.palette.dark2.main }}>
+            <Box height={"100vh"} display={"flex"} flexDirection={"row"} gap={"10px"} sx={{ backgroundColor: customTheme.palette.dark2.main }}>
                 <SideBar setOption={setOption} />
                 <Paper elevation={5} sx={{ width: "100%", margin: "10px" }}>
-                    <Box padding={2}>
+                    <Box padding={4}>
                         <Routes>
                             <Route path="/orders" element={<Orders />}/>
                             <Route path="/addProduct" element={<AddProducts/>}/>
                             <Route path="/editProduct" element={<EditProducts/>}/>
+                            <Route path='/orders/orderPreview/:id' element={<OrderPreview />} />
                         </Routes>
                     </Box>
                 </Paper>
