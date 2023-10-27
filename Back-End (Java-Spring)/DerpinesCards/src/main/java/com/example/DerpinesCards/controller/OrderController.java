@@ -47,4 +47,11 @@ public class OrderController {
         Order order = this.orderRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(order);
     }
+
+    @DeleteMapping("/{id}")
+    private ResponseEntity<Order> deleteOrder(@PathVariable int id) {
+        Order order = this.orderRepository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        this.orderRepository.delete(order);
+        return ResponseEntity.ok(order);
+    }
 }

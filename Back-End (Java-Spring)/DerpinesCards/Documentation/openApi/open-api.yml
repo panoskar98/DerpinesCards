@@ -162,6 +162,26 @@ paths:
           description: Successfully returned the order
         '404':
           description: No order with that ID found
+    delete:
+      tags:
+        - orders
+      summary: delete an order
+      description: delete an order using id
+      operationId: deletOrderById
+      parameters:
+        - name: id
+          in: path
+          description: Te Id of th order to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned the order
+        '404':
+          description: No order with that ID found
+
+
   /orders/customer/{customerId}:
     post:
       tags:
