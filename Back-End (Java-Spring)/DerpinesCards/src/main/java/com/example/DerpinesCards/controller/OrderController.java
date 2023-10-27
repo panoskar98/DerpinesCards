@@ -54,4 +54,11 @@ public class OrderController {
         this.orderRepository.delete(order);
         return ResponseEntity.ok(order);
     }
+
+    @PutMapping("/{id}")
+    private ResponseEntity<Order> changeOrderComplition(@PathVariable int id, @RequestBody Boolean completed) {
+        Order order = this.orderRepository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        order.setCompleted(completed);
+        return ResponseEntity.ok(this.orderRepository.save(order));
+    }
 }
