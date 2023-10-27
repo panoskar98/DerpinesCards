@@ -72,6 +72,7 @@ const AddProducts = () => {
                         >
                             <MenuItem value={"card"}>Card</MenuItem>
                             <MenuItem value={"candle"}>Candle</MenuItem>
+                            <MenuItem value={"waxMelt"}>Wax Melt</MenuItem>
                             <MenuItem value={"other"}>Other</MenuItem>
                         </Select>
                     </FormControl>
