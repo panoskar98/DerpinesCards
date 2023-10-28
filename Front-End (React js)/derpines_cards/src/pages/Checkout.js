@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import customTheme from "../Themes/CustomTheme";
 import { Box, Button, ButtonGroup, Container, Divider, Grid, List, ListItem, ListItemText, Step, StepLabel, Stepper, TextField, Typography } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DataContext from "../DataContext";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo.png"
@@ -22,8 +22,13 @@ function Checkout() {
 
     const placeOrder = () => {
         addCustomer();
-        addOrder();
     }
+
+    useEffect(() => {
+        if(customerResponse !== null) {
+            addOrder();
+        }
+    },[customerResponse])
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -102,67 +107,67 @@ function Checkout() {
                             {activeStep === 1 && (
                                 <Box>
                                     <Container>
-                                    <Typography variant="h5">
-                                        Customer
-                                    </Typography>
-                                    <Divider/>
-                                    <List >
-                                        <ListItem>
-                                            <ListItemText>
-                                                {"Name: " + customerInfo.name}
-                                            </ListItemText>
-                                        </ListItem>
-                                        <ListItem>
-                                            <ListItemText>
-                                                {"Surname: " + customerInfo.surname}
-                                            </ListItemText>
-                                        </ListItem>
-                                        <ListItem>
-                                            <ListItemText>
-                                                {"Address: " + customerInfo.address}
-                                            </ListItemText>
-                                        </ListItem>
-                                        <ListItem>
-                                            <ListItemText>
-                                                {"Email: " + customerInfo.email}
-                                            </ListItemText>
-                                        </ListItem>
-                                        <ListItem>
-                                            <ListItemText>
-                                                {"Phone Number: " + customerInfo.phoneNumber}
-                                            </ListItemText>
-                                        </ListItem>
-                                    </List>
-                                    <Typography variant="h5">
-                                        Products
-                                    </Typography>
-                                    <Divider/>
-                                    <List>
-                                        {orderProductIds.map((id, index) => {
-                                            const product = products.find(prod => prod.productId === id)
-                                            return(
-                                                <ListItem>
-                                                    <ListItemText>
-                                                        {index+1 + ". " + product.title + " " + product.price + "€"}
-                                                    </ListItemText>
-                                                </ListItem>
-                                            )
-                                        })}
-                                    </List>
-                                    <Divider/>
-                                    <Typography>
-                                        {"Total: " + totalPrice + "€"}
-                                    </Typography>
-                                    <Box display="flex" justifyContent="right">
-                                        <ButtonGroup >
-                                            <Button variant="contained" onClick={() => setActiveStep(0)}>
-                                                Back
-                                            </Button>
-                                            <Button variant="contained" onClick={placeOrder}>
-                                                Place Order
-                                            </Button>
-                                        </ButtonGroup>
-                                    </Box>
+                                        <Typography variant="h5">
+                                            Customer
+                                        </Typography>
+                                        <Divider />
+                                        <List >
+                                            <ListItem>
+                                                <ListItemText>
+                                                    {"Name: " + customerInfo.name}
+                                                </ListItemText>
+                                            </ListItem>
+                                            <ListItem>
+                                                <ListItemText>
+                                                    {"Surname: " + customerInfo.surname}
+                                                </ListItemText>
+                                            </ListItem>
+                                            <ListItem>
+                                                <ListItemText>
+                                                    {"Address: " + customerInfo.address}
+                                                </ListItemText>
+                                            </ListItem>
+                                            <ListItem>
+                                                <ListItemText>
+                                                    {"Email: " + customerInfo.email}
+                                                </ListItemText>
+                                            </ListItem>
+                                            <ListItem>
+                                                <ListItemText>
+                                                    {"Phone Number: " + customerInfo.phoneNumber}
+                                                </ListItemText>
+                                            </ListItem>
+                                        </List>
+                                        <Typography variant="h5">
+                                            Products
+                                        </Typography>
+                                        <Divider />
+                                        <List>
+                                            {orderProductIds.map((id, index) => {
+                                                const product = products.find(prod => prod.productId === id)
+                                                return (
+                                                    <ListItem>
+                                                        <ListItemText>
+                                                            {index + 1 + ". " + product.title + " " + product.price + "€"}
+                                                        </ListItemText>
+                                                    </ListItem>
+                                                )
+                                            })}
+                                        </List>
+                                        <Divider />
+                                        <Typography>
+                                            {"Total: " + totalPrice + "€"}
+                                        </Typography>
+                                        <Box display="flex" justifyContent="right">
+                                            <ButtonGroup >
+                                                <Button variant="contained" onClick={() => setActiveStep(0)}>
+                                                    Back
+                                                </Button>
+                                                <Button variant="contained" onClick={placeOrder}>
+                                                    Place Order
+                                                </Button>
+                                            </ButtonGroup>
+                                        </Box>
                                     </Container>
                                 </Box>
                             )}

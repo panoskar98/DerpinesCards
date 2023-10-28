@@ -22,7 +22,7 @@ function OrderPreview() {
     }
 
     const deleteOrder = () => {
-        axios.delete(`http://localhost:4000/orders/${params.id}`).then(alert("Order Deleted"))
+        axios.delete(`http://localhost:4000/orders/${params.id}`).then(alert("Order Deleted")).then(navigate('/admin/orders'))
     }
 
     return (
