@@ -38,7 +38,7 @@ function ProductPage() {
             <Container>
                 <Grid container display="flex" justifyContent="center" >
                     <Grid item sm={12} md={4} height="400px" marginBottom="5px" justifyContent="center" display="flex" padding={3}>
-                        <img src={product.img} style={{ height: "100%", borderRadius: "8px" }} alt={product.title} />
+                        <img src={product.img} style={{ height: "100%", borderRadius: "8px", width:"100%", objectFit: "cover" }} alt={product.title} />
                     </Grid>
                     <Grid item sm={12} md={8} padding={3} width="100%">
                         <Box borderRadius="8px" display="flex" justifyContent="space-between" >

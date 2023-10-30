@@ -1,0 +1,90 @@
+{
+  "individualResults": [
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": false,
+      "flywayVersion": "9.22.2",
+      "database": "havaqphc",
+      "warnings": [],
+      "timestamp": "2023-10-30T13:31:41.812194400",
+      "operation": "migrate",
+      "exception": "Migration V1_0_1__Product_Insertion_Cards.sql failed\n----------------------------------------------------\nSQL State  : 42703\nError Code : 0\nMessage    : ERROR: column \"yellow\" does not exist\n  Position: 131\nLocation   : db/migrations/V1_0_1__Product_Insertion_Cards.sql (C:\\Users\\panag\\My Drive\\Boolean\\DerpineCards\\Back-End (Java-Spring)\\DerpinesCards\\db\\migrations\\V1_0_1__Product_Insertion_Cards.sql)\nLine       : 1\nStatement  : insert \r\n    into\r\n        products\r\n        (colour,date_added,description,image,price,title,type,weight) \r\n    values\r\n        (\"yellow\",\"2023-10-30T11:13:04.94569\",\"Anniversary Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/91/0b/G5WwZKsU_o.jpeg\",3.5,\"Mr and Mrs\",\"card\",200),\r\n        (\"white\",\"2023-10-30T11:13:04.94569\",\"Marriage Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/a9/e6/dfkIYjJk_o.jpeg\",3.5,\"Just Married\",\"card\",200),\r\n        (\"white\",\"2023-10-30T11:13:04.94569\",\"Birthday Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/b6/d3/J2KZEE3M_o.jpeg\",3.5,\"Happy Birthday\",\"card\",200),\r\n        (\"red\",\"2023-10-30T11:13:04.94569\",\"Newborn Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/fa/22/IkXihO7f_o.jpeg\",3.5,\"?? ??? ?????\",\"card\",200)\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": false,
+      "flywayVersion": "9.22.2",
+      "database": "havaqphc",
+      "warnings": [],
+      "timestamp": "2023-10-30T13:36:31.238472100",
+      "operation": "migrate",
+      "exception": "Migration V1_0_1__Product_Insertion_Cards.sql failed\n----------------------------------------------------\nSQL State  : 42703\nError Code : 0\nMessage    : ERROR: column \"yellow\" does not exist\n  Position: 116\nLocation   : db/migrations/V1_0_1__Product_Insertion_Cards.sql (C:\\Users\\panag\\My Drive\\Boolean\\DerpineCards\\Back-End (Java-Spring)\\DerpinesCards\\db\\migrations\\V1_0_1__Product_Insertion_Cards.sql)\nLine       : 1\nStatement  : INSERT INTO products\r\n        (colour,date_added,description,image,price,title,type,weight) \r\n    VALUES\r\n        (\"yellow\",\"2023-10-30T11:13:04.94569\",\"Anniversary Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/91/0b/G5WwZKsU_o.jpeg\",3.5,\"Mr and Mrs\",\"card\",200),\r\n        (\"white\",\"2023-10-30T11:13:04.94569\",\"Marriage Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/a9/e6/dfkIYjJk_o.jpeg\",3.5,\"Just Married\",\"card\",200),\r\n        (\"white\",\"2023-10-30T11:13:04.94569\",\"Birthday Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/b6/d3/J2KZEE3M_o.jpeg\",3.5,\"Happy Birthday\",\"card\",200),\r\n        (\"red\",\"2023-10-30T11:13:04.94569\",\"Newborn Card ,?6 cardboard. White envelop included\",\"https://images2.imgbox.com/fa/22/IkXihO7f_o.jpeg\",3.5,\"?? ??? ?????\",\"card\",200)\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": "1.0.1",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1.0.1",
+          "description": "Product Insertion Cards",
+          "type": "SQL",
+          "filepath": "C:\\Users\\panag\\My Drive\\Boolean\\DerpineCards\\Back-End (Java-Spring)\\DerpinesCards\\db\\migrations\\V1_0_1__Product_Insertion_Cards.sql",
+          "executionTime": 394
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": true,
+      "flywayVersion": "9.22.2",
+      "database": "havaqphc",
+      "warnings": [],
+      "timestamp": "2023-10-30T13:38:24.673243400",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": "1.0.2",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1.0.1",
+          "description": "Product Insertion Cards",
+          "type": "SQL",
+          "filepath": "C:\\Users\\panag\\My Drive\\Boolean\\DerpineCards\\Back-End (Java-Spring)\\DerpinesCards\\db\\migrations\\V1_0_1__Product_Insertion_Cards.sql",
+          "executionTime": 396
+        },
+        {
+          "category": "Versioned",
+          "version": "1.0.2",
+          "description": "Product Insertion Candles",
+          "type": "SQL",
+          "filepath": "C:\\Users\\panag\\My Drive\\Boolean\\DerpineCards\\Back-End (Java-Spring)\\DerpinesCards\\db\\migrations\\V1_0_2__Product_Insertion_Candles.sql",
+          "executionTime": 391
+        }
+      ],
+      "migrationsExecuted": 2,
+      "success": true,
+      "flywayVersion": "9.22.2",
+      "database": "havaqphc",
+      "warnings": [],
+      "timestamp": "2023-10-30T14:45:26.029510200",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    }
+  ]
+}

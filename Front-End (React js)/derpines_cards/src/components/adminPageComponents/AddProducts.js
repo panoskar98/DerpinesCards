@@ -4,8 +4,6 @@ import ProductCard from "../mainPageComponents/ProductCard"
 import axios from "axios";
 import ProductPreview from "./ProductPreview";
 
-// Todo: Add a link to product page on submit
-
 const AddProducts = () => {
     const [type, setType] = useState("card")
     const [title, setTitle] = useState("title")

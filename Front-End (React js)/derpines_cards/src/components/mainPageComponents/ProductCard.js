@@ -14,7 +14,7 @@ const ProductCard = (props) => {
             >
                 <Box padding="5px">
                 <img 
-                    style={{ width: "100%", height: "12rem", borderRadius: "5px"}} 
+                    style={{ width: "100%", height: "12rem", borderRadius: "5px", objectFit: "cover"}} 
                     src={props.product.img} 
                     alt="product" 
                 />

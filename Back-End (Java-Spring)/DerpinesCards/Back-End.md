@@ -11,3 +11,6 @@ Spring Rest Controller annotation is used to create RESTful web services. The co
 ### Repositories
 The model Repositories are handled by the spring framework's JpaRepository.
 
+## Postgres SQL
+If you want to migrate some products as a demo to your connected database use flyway migrations under db/migrations
+
