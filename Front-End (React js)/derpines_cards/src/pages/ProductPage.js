@@ -34,6 +34,7 @@ function ProductPage() {
 
     return (
         <ThemeProvider theme={customTheme}>
+            <Box className="glass" margin={4}>
             <Container>
                 <Grid container display="flex" justifyContent="center" >
                     <Grid item sm={12} md={4} height="400px" marginBottom="5px" justifyContent="center" display="flex" padding={3}>
@@ -90,6 +91,7 @@ function ProductPage() {
                     </Grid>
                 </Grid>
             </Container>
+            </Box>
         </ThemeProvider>
     )
 }

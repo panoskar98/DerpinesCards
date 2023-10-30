@@ -22,12 +22,12 @@ const MainPage = () => {
                     <Box className="glass" padding="10px">
                         <Header />
                     </Box>
-                    <Box className="glass" marginTop={4}>
+                    
                         <Routes>
                             <Route path="/products" element={<ProductsBox />} />
                             <Route path='/product/:title' element={<ProductPage />} />
                         </Routes>
-                    </Box>
+                    
                     <Box className="glass" marginTop={4} padding="8px">
                         <Footer />
                     </Box>
