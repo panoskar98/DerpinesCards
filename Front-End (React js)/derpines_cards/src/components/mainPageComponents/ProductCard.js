@@ -29,7 +29,7 @@ const ProductCard = (props) => {
                         {props.product.price + " €"}
                     </Typography>
                     <Button variant="outlined" color="dark2" >
-                        <Link to={`/product/${productRoute}`} state={props.product} style={{ textDecoration: "none" }}>
+                        <Link to={`/product/${productRoute}`} state={props.product} style={{ textDecoration: "none", color: "inherit" }}>
                             Modify
                         </Link>
                     </Button>
