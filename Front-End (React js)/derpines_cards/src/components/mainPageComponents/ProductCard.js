@@ -20,7 +20,7 @@ const ProductCard = (props) => {
                 />
                 </Box>
                 <Box>
-                    <Typography variant="p" component="h2" >
+                    <Typography variant="h6" component="h3" >
                         {props.product.title}
                     </Typography>
                 </Box>

@@ -16,7 +16,7 @@ const customTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Playpen", "cursive"].join(','),
+    fontFamily: ["Montserrat", "cursive"].join(','),
     "fontWeightLight": 300,
     "fontWeightRegular": 400,
     "fontWeightMedium": 500
