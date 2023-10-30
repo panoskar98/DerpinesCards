@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useContext } from "react";
 import DataContext from "../../DataContext";
@@ -28,12 +28,13 @@ const ProductsBox = () => {
     <Box >
       {Object.keys(groupedProducts).map((type) => (
         <Box key={type} className="glass" padding={3} margin={4}>
-          <Box display="flex" justifyContent="left" marginBottom={3}>
+          <Box display="flex" justifyContent="left" >
             <Typography variant="h4">
               {type + 's'}
             </Typography>
           </Box>
-          <Grid container spacing={5} justifyContent="center" alignItems="center">
+          <Divider sx={{marginBottom: "20px"}}/>
+          <Grid container spacing={5} justifyContent="center" alignItems="center" >
             {groupedProducts[type].map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}
