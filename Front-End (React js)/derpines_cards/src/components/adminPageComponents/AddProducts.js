@@ -52,6 +52,7 @@ const AddProducts = () => {
 
     return (
         <Container>
+            <Box className="glass" padding={2}>
             <Grid container justifyContent="center" spacing={5}>
                 <Grid item sm={12}>
                     <Typography variant="h4" component="h1" display="flex" justifyContent="center" width="100%" padding="5px">
@@ -138,6 +139,7 @@ const AddProducts = () => {
                     <Button variant="contained" onClick={submitToDataBase}>Submit</Button>
                 </Grid>
             </Grid>
+            </Box>
         </Container>
     );
 }

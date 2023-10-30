@@ -28,7 +28,7 @@ const AdminPage = () => {
 
     return (
         <ThemeProvider theme={customTheme}>
-            <Box height={"100vh"} display={"flex"} flexDirection={"row"} gap={"10px"} sx={{ backgroundColor: customTheme.palette.dark2.main }}>
+            <Box height={"100%"} display={"flex"} flexDirection={"row"} gap={"10px"} sx={{ backgroundColor: customTheme.palette.dark2.main }}>
                 <SideBar setOption={setOption} />
                 <Paper elevation={5} sx={{ width: "100%", margin: "10px" }}>
                     <Box padding={4}>
